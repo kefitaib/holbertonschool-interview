@@ -7,18 +7,10 @@ def canUnlockAll(boxes):
     if not boxes[0] or not isinstance(boxes[0], list):
         return False
 
-    b = boxes
-    l = b[0]
-    while l:
-        x = l.pop()
-        if b[x] != -1:
-            for i in b[x]:
-                if i not in l and b[i] != -1:
-                    l.append(i)
-            b[x] = -1
+    l = [0]
+    for i in range(len(boxes)):
+        for j in boxes[i]:
+            if j not in l and j < len(boxes) and j != i:
+                l.append(j)
 
-    for i in b[1:]:
-        if i != -1:
-            return False
-
-    return True
+    return len(l) == len(boxes)
