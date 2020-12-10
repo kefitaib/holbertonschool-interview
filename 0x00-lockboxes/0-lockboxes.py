@@ -4,7 +4,7 @@
 def canUnlockAll(boxes):
     """ Return True if all boxes can be opened, else return False """
 
-    if not boxes:
+    if not boxes[0] or not isinstance(boxes[0], list):
         return False
 
     b = boxes
