@@ -10,7 +10,7 @@ def canUnlockAll(boxes):
         x = l.pop()
         if b[x] != -1:
             for i in b[x]:
-                if i not in l:
+                if i not in l and b[i] != -1:
                     l.append(i)
             b[x] = -1
 
