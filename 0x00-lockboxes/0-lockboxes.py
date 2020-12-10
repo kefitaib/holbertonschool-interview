@@ -4,6 +4,9 @@
 def canUnlockAll(boxes):
     """ Return True if all boxes can be opened, else return False """
 
+    if not boxes:
+        return False
+
     b = boxes
     l = b[0]
     while l:
