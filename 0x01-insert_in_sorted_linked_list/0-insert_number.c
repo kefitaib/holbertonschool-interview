@@ -42,5 +42,6 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 	}
 
+	free(new);
 	return (NULL);
 }
